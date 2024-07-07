@@ -60,7 +60,33 @@ body {
   background-color: var(--thirdColor);
   height: 70%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 #dashboard-btn {
-  transition: transform 0.5s ease;
+  transition: all 0.3s ease;
+}
+#add-btn {
+  transition: all 0.3s ease;
+}
+.category {
+  margin: 0.2em;
+  width: 25%;
+  height: 80%;
+  border: 2px solid var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.category img {
+  width: 60%;
+  height: 60%;
+}
+.category div {
+  font-size: 0.6em;
+  color: var(--secondaryColor);
 }

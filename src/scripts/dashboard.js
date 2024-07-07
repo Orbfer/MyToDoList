@@ -10,6 +10,10 @@ function openDashboard() {
     "animate__slideInUp"
   );
   dashboardCont.appendChild(dashboard);
+  makeCategory("All Tasks", "../src/svgs/tasks-list-svgrepo-com.svg");
+  makeCategory("Work Tasks", "../src/svgs/work-svgrepo-com.svg");
+  makeCategory("Personal Tasks", "../src/svgs/cross-leg-svgrepo-com.svg");
+  makeCategory("Project Tasks", "../src/svgs/project-svgrepo-com.svg");
   btns.style.position = "fixed";
   btns.style.bottom = "-105%";
   btns.style.transition = "0.6s";
@@ -40,5 +44,17 @@ function resetDashboard() {
   dashboard.remove();
   btns.style.top = "0";
   btns.style.transition = "0s";
+}
+function makeCategory(name, img) {
+  const dashboard = document.querySelector(".dashboard");
+  const categoryDiv = document.createElement("div");
+  categoryDiv.classList.add("category");
+  const categoryDivImg = document.createElement("img");
+  categoryDivImg.setAttribute("src", img);
+  const categoryDivText = document.createElement("div");
+  categoryDivText.innerText = name;
+  dashboard.append(categoryDiv);
+  categoryDiv.append(categoryDivImg);
+  categoryDiv.append(categoryDivText);
 }
 export default openDashboard;
