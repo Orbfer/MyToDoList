@@ -1,22 +1,21 @@
-const page = document.querySelector("#page");
-const btns = document.querySelectorAll(".div-btn");
+const dashboardCont = document.querySelector("#dashboard-cont");
+const btns = document.querySelector("#btns");
 const dashboardBtn = document.querySelector("#dashboard-btn");
 let rotation = 0;
 function openDashboard() {
-  page.style.gridTemplateRows = "1fr 4fr 0.5fr 1fr";
   const dashboard = document.createElement("div");
-  dashboard.style.backgroundColor = "#58287f";
   dashboard.classList.add(
     "dashboard",
     "animate__animated",
     "animate__slideInUp"
   );
-  page.appendChild(dashboard);
+  dashboardCont.appendChild(dashboard);
+  btns.style.position = "fixed";
+  btns.style.bottom = "-105%";
+  btns.style.transition = "0.6s";
+  btns.style.top = "-48.5%";
   rotation = (rotation + 90) % 360;
   dashboardBtn.style.transform = `rotate(${rotation}deg)`;
-  btns.forEach((btn) =>
-    btn.classList.add("animate__animated", "animate__slideInUp")
-  );
   dashboardBtn.removeEventListener("click", openDashboard);
   dashboardBtn.addEventListener("click", closeDashboard);
 }
@@ -24,13 +23,22 @@ function closeDashboard() {
   const dashboard = document.querySelector(".dashboard");
   dashboard.classList.remove("animate__slideInUp");
   dashboard.classList.add("animate__slideOutDown");
-  setTimeout(() => {
-    dashboard.remove();
-    btns.forEach((btn) => btn.classList.remove("animate__slideInUp"));
-    btns.forEach((btn) => btn.classList.add("animate__slideInDown"));
-    page.style.gridTemplateRows = "1fr 4fr 0.5fr";
-  }, 600);
+  btns.style.position = "relative";
+  btns.style.bottom = "auto";
+  btns.style.left = "auto";
+  btns.style.right = "auto";
+  btns.style.transition = "1s";
+  btns.style.top = "48.5%";
+  rotation = (rotation + 90) % 360;
+  dashboardBtn.style.transform = `rotate(${rotation}deg)`;
   dashboardBtn.removeEventListener("click", closeDashboard);
   dashboardBtn.addEventListener("click", openDashboard);
+  dashboard.addEventListener("animationend", resetDashboard, { once: true });
+}
+function resetDashboard() {
+  const dashboard = document.querySelector(".dashboard");
+  dashboard.remove();
+  btns.style.top = "0";
+  btns.style.transition = "0s";
 }
 export default openDashboard;
