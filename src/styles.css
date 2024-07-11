@@ -78,7 +78,7 @@ body {
   transform: scale(2.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.category {
+#all-tasks {
   margin: 0.2em;
   width: 25%;
   height: 80%;
@@ -88,12 +88,74 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  background-color: var(--textColor);
 }
-.category img {
+#all-tasks img {
   width: 60%;
   height: 60%;
 }
-.category div {
+#all-tasks div {
+  font-size: 0.6em;
+  color: var(--secondaryColor);
+}
+#work-tasks {
+  margin: 0.2em;
+  width: 25%;
+  height: 80%;
+  border: 2px solid var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+#work-tasks img {
+  width: 60%;
+  height: 60%;
+}
+#work-tasks div {
+  font-size: 0.6em;
+  color: var(--secondaryColor);
+}
+#personal-tasks {
+  margin: 0.2em;
+  width: 25%;
+  height: 80%;
+  border: 2px solid var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+#personal-tasks img {
+  width: 60%;
+  height: 60%;
+}
+#personal-tasks div {
+  font-size: 0.6em;
+  color: var(--secondaryColor);
+}
+#project-tasks {
+  margin: 0.2em;
+  width: 25%;
+  height: 80%;
+  border: 2px solid var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+#project-tasks img {
+  width: 60%;
+  height: 60%;
+}
+#project-tasks div {
   font-size: 0.6em;
   color: var(--secondaryColor);
 }
@@ -263,4 +325,10 @@ body {
 #task-priority {
   grid-column: 3/4;
   grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#task-priority img {
+  width: 50%;
 }

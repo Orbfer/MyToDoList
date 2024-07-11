@@ -98,12 +98,27 @@ function addNewTask() {
   taskCategory.id = "task-category";
   taskCategory.innerText = category;
   task.append(taskCategory);
-  taskCategory.id = "task-category";
-  taskCategory.innerText = category;
   const taskDueDate = document.createElement("div");
   taskDueDate.id = "task-due-date";
   taskDueDate.innerText = taskDate;
   task.append(taskDueDate);
+  const taskPriority = document.createElement("div");
+  taskPriority.id = "task-priority";
+  task.append(taskPriority);
+  const taskPriorityImg = document.createElement("img");
+  taskPriorityImg.src = getTaskPriority();
+  taskPriority.append(taskPriorityImg);
+  function getTaskPriority() {
+    if (priority == 1) {
+      return "../src/svgs/network-cellular-signal-weak-svgrepo-com.svg";
+    } else if (priority == 2) {
+      return "../src/svgs/network-cellular-signal-ok-svgrepo-com.svg";
+    } else if (priority == 3) {
+      return "../src/svgs/network-cellular-signal-good-svgrepo-com.svg";
+    } else if (priority == 4) {
+      return "../src/svgs/network-cellular-signal-excellent-svgrepo-com.svg";
+    }
+  }
   function toggleTaskCompletion() {
     task.classList.remove("animate__zoomInDown");
     task.classList.add("animate__pulse");
@@ -144,7 +159,7 @@ function closePopUp() {
   popUp.remove();
 }
 function createPriorityBar() {
-  priority = 0;
+  priority = 1;
   const popUp = document.querySelector(".popup");
   const priorityBarCont = document.createElement("div");
   priorityBarCont.setAttribute("id", "priority-bar-cont");
@@ -204,3 +219,4 @@ function createPriorityBar() {
   }
 }
 export default addTask;
+export { tasksArr };

@@ -1,3 +1,4 @@
+import categoryPicked from "./categoryPicker";
 const dashboardCont = document.querySelector("#dashboard-cont");
 const btns = document.querySelector("#btns");
 const dashboardBtn = document.querySelector("#dashboard-btn");
@@ -10,10 +11,30 @@ function openDashboard() {
     "animate__slideInUp"
   );
   dashboardCont.appendChild(dashboard);
-  makeCategory("All Tasks", "../src/svgs/tasks-list-svgrepo-com.svg");
-  makeCategory("Work Tasks", "../src/svgs/work-svgrepo-com.svg");
-  makeCategory("Personal Tasks", "../src/svgs/cross-leg-svgrepo-com.svg");
-  makeCategory("Project Tasks", "../src/svgs/project-svgrepo-com.svg");
+  makeCategory(
+    "All Tasks",
+    "../src/svgs/tasks-list-svgrepo-com.svg",
+    "all-tasks"
+  );
+  makeCategory("Work Tasks", "../src/svgs/work-svgrepo-com.svg", "work-tasks");
+  makeCategory(
+    "Personal Tasks",
+    "../src/svgs/cross-leg-svgrepo-com.svg",
+    "personal-tasks"
+  );
+  makeCategory(
+    "Project Tasks",
+    "../src/svgs/project-svgrepo-com.svg",
+    "project-tasks"
+  );
+  const allTasks = document.querySelector("#all-tasks");
+  const workTasks = document.querySelector("#work-tasks");
+  const personalTasks = document.querySelector("#personal-tasks");
+  const projectTasks = document.querySelector("#project-tasks");
+  allTasks.addEventListener("click", () => categoryPicked(1));
+  workTasks.addEventListener("click", () => categoryPicked(2));
+  personalTasks.addEventListener("click", () => categoryPicked(3));
+  projectTasks.addEventListener("click", () => categoryPicked(4));
   btns.style.position = "fixed";
   btns.style.bottom = "-105%";
   btns.style.transition = "0.6s";
@@ -45,10 +66,10 @@ function resetDashboard() {
   dashboardBtn.removeEventListener("click", closeDashboard);
   dashboardBtn.addEventListener("click", openDashboard);
 }
-function makeCategory(name, img) {
+function makeCategory(name, img, id) {
   const dashboard = document.querySelector(".dashboard");
   const categoryDiv = document.createElement("div");
-  categoryDiv.classList.add("category");
+  categoryDiv.id = id;
   const categoryDivImg = document.createElement("img");
   categoryDivImg.setAttribute("src", img);
   const categoryDivText = document.createElement("div");
