@@ -2,8 +2,8 @@
 :root {
   --mainColor: #f5edce;
   --secondaryColor: #89c4e1;
-  --thirdColor: #58287f;
-  --fourthColor: #c1dae6;
+  --thirdColor: #1a2130;
+  --fourthColor: #5a72a0;
   --textColor: #1a0000;
   --mainText: "Quicksand";
 }
@@ -20,6 +20,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 4fr 1.5fr;
+  gap: 1em;
 }
 #header {
   display: flex;
@@ -67,9 +68,15 @@ body {
 }
 #dashboard-btn {
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 #add-btn {
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+#dashboard-btn: {
+  transform: scale(2.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .category {
   margin: 0.2em;
@@ -89,4 +96,171 @@ body {
 .category div {
   font-size: 0.6em;
   color: var(--secondaryColor);
+}
+.popup-background {
+  background-color: rgba(0, 0, 0, 0.505);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup {
+  width: 80%;
+  height: 50%;
+  background-color: var(--mainColor);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+.task-name {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-size: 1.5em;
+  width: 100%;
+  font-family: var(--mainText);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.411);
+}
+.close-btn-cont {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+.close-btn-cont img {
+  width: 45%;
+  cursor: pointer;
+}
+#category-input {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.411);
+  font-size: 1.5em;
+  width: 100%;
+  font-family: var(--mainText);
+}
+#task-date {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.411);
+  font-size: 1.5em;
+  width: 100%;
+  font-family: var(--mainText);
+}
+.send-btn-cont {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.send-btn-cont img {
+  width: 75%;
+  cursor: pointer;
+}
+#priority-bar-cont {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+#priority-bar-text {
+  font-size: 1.2em;
+}
+#priority-bar {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.bar {
+  width: 10%;
+  height: 90%;
+  border: 2px solid var(--thirdColor);
+  background-color: var(--secondaryColor);
+  cursor: pointer;
+}
+#tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.task {
+  width: 90%;
+  height: 6em;
+  background-color: var(--thirdColor);
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+.task-name.error,
+#task-date.error {
+  border: 2px solid red;
+}
+#task-description {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 0.2em;
+  color: var(--secondaryColor);
+  border: 2px var(--fourthColor);
+  border-style: none none solid none;
+}
+#checkbox-cont {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 36%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+#task-checkbox {
+  width: 100%;
+  height: 60%;
+  cursor: pointer;
+}
+#task-category {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+  color: var(--secondaryColor);
+  border: 2px var(--fourthColor);
+  border-style: none solid none none;
+}
+#task-due-date {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+  color: var(--secondaryColor);
+  border: 2px var(--fourthColor);
+  border-style: none solid none none;
+}
+#task-priority {
+  grid-column: 3/4;
+  grid-row: 2/3;
 }

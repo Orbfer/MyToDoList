@@ -32,11 +32,9 @@ function closeDashboard() {
   btns.style.left = "auto";
   btns.style.right = "auto";
   btns.style.transition = "1s";
-  btns.style.top = "48.5%";
+  btns.style.top = "46.3%";
   rotation = (rotation + 90) % 360;
   dashboardBtn.style.transform = `rotate(${rotation}deg)`;
-  dashboardBtn.removeEventListener("click", closeDashboard);
-  dashboardBtn.addEventListener("click", openDashboard);
   dashboard.addEventListener("animationend", resetDashboard, { once: true });
 }
 function resetDashboard() {
@@ -44,6 +42,8 @@ function resetDashboard() {
   dashboard.remove();
   btns.style.top = "0";
   btns.style.transition = "0s";
+  dashboardBtn.removeEventListener("click", closeDashboard);
+  dashboardBtn.addEventListener("click", openDashboard);
 }
 function makeCategory(name, img) {
   const dashboard = document.querySelector(".dashboard");
