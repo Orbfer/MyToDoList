@@ -36,6 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: end;
+  min-height: 180px;
 }
 #btns {
   display: flex;
@@ -73,10 +74,6 @@ body {
 #add-btn {
   transition: all 0.3s ease;
   cursor: pointer;
-}
-#dashboard-btn: {
-  transform: scale(2.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 #all-tasks {
   margin: 0.2em;
@@ -263,13 +260,19 @@ body {
 }
 .task {
   width: 90%;
-  height: 6em;
   background-color: var(--thirdColor);
   display: grid;
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 1em;
   gap: 1em;
+}
+#empty-task-div {
+  width: 90%;
+  height: 6em;
+  padding: 1em;
+  gap: 1em;
+  background-color: transparent;
 }
 .task-name.error,
 #task-date.error {
@@ -331,4 +334,31 @@ body {
 }
 #task-priority img {
   width: 50%;
+}
+@media (min-width: 1600px) and (max-width: 4000px) {
+  #dashboard-cont {
+    min-height: 220px;
+  }
+  .div-btn {
+    width: 5%;
+  }
+  #priority-bar {
+    width: 80%;
+    height: 80%;
+  }
+  .send-btn-cont img {
+    width: 35%;
+  }
+  .popup {
+    height: 60%;
+  }
+  .task {
+    width: 90%;
+    height: 20%;
+    padding: 1em;
+    gap: 1em;
+  }
+  #task-priority img {
+    width: 10%;
+  }
 }
