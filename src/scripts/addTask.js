@@ -1,3 +1,4 @@
+import { saveTasksToLocalStorage } from "./storage";
 const addBtn = document.querySelector("#add-btn");
 const sitePage = document.querySelector("#page");
 let tasksArr = [];
@@ -76,6 +77,7 @@ function addNewTask() {
     priority: priority,
   };
   tasksArr.push(taskObject);
+  saveTasksToLocalStorage();
   const popUp = document.querySelector(".popup-background");
   popUp.remove();
   createTask(taskObject);
@@ -135,6 +137,7 @@ function createTask(taskObject) {
       () => {
         task.remove();
         tasksArr = tasksArr.filter((t) => t !== taskObject);
+        saveTasksToLocalStorage();
       },
       { once: true }
     );
