@@ -136,7 +136,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animate.css */ \"./node_modules/animate.css/animate.css\");\n/* harmony import */ var _scripts_dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/dashboard */ \"./src/scripts/dashboard.js\");\n/* harmony import */ var _scripts_addTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/addTask */ \"./src/scripts/addTask.js\");\n/* harmony import */ var _scripts_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/storage */ \"./src/scripts/storage.js\");\n\r\n\r\n\r\n\r\n\r\nconst dashboardBtn = document.querySelector(\"#dashboard-btn\");\r\nconst addBtn = document.querySelector(\"#add-btn\");\r\ndashboardBtn.addEventListener(\"click\", _scripts_dashboard__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\naddBtn.addEventListener(\"click\", _scripts_addTask__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\ndocument.addEventListener(\"DOMContentLoaded\", _scripts_storage__WEBPACK_IMPORTED_MODULE_4__.loadTasksFromLocalStorage);\r\n\n\n//# sourceURL=webpack://mytodolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animate.css */ \"./node_modules/animate.css/animate.css\");\n/* harmony import */ var _scripts_dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/dashboard */ \"./src/scripts/dashboard.js\");\n/* harmony import */ var _scripts_addTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/addTask */ \"./src/scripts/addTask.js\");\n/* harmony import */ var _src_svgs_add_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/svgs/add-svgrepo-com.svg */ \"./src/svgs/add-svgrepo-com.svg\");\n/* harmony import */ var _src_svgs_dashboard_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/svgs/dashboard-svgrepo-com.svg */ \"./src/svgs/dashboard-svgrepo-com.svg\");\n/* harmony import */ var _scripts_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scripts/storage */ \"./src/scripts/storage.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst dashboardBtn = document.querySelector(\"#dashboard-btn\");\r\nconst addBtn = document.querySelector(\"#add-btn\");\r\ndashboardBtn.src = _src_svgs_add_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_4__;\r\naddBtn.src = _src_svgs_dashboard_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_5__;\r\ndashboardBtn.addEventListener(\"click\", _scripts_dashboard__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\naddBtn.addEventListener(\"click\", _scripts_addTask__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\ndashboardBtn.scr = addBtn.src = document.addEventListener(\r\n  \"DOMContentLoaded\",\r\n  _scripts_storage__WEBPACK_IMPORTED_MODULE_6__.loadTasksFromLocalStorage\r\n);\r\n\n\n//# sourceURL=webpack://mytodolist/./src/index.js?");
 
 /***/ }),
 
@@ -180,6 +180,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/svgs/add-svgrepo-com.svg":
+/*!**************************************!*\
+  !*** ./src/svgs/add-svgrepo-com.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"03f165b8eef9b9158719.svg\";\n\n//# sourceURL=webpack://mytodolist/./src/svgs/add-svgrepo-com.svg?");
+
+/***/ }),
+
 /***/ "./src/svgs/close-circle-svgrepo-com.svg":
 /*!***********************************************!*\
   !*** ./src/svgs/close-circle-svgrepo-com.svg ***!
@@ -197,6 +207,16 @@ eval("module.exports = __webpack_require__.p + \"b4ef40a711041a386198.svg\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"b2793af0bb30af7eaa69.svg\";\n\n//# sourceURL=webpack://mytodolist/./src/svgs/cross-leg-svgrepo-com.svg?");
+
+/***/ }),
+
+/***/ "./src/svgs/dashboard-svgrepo-com.svg":
+/*!********************************************!*\
+  !*** ./src/svgs/dashboard-svgrepo-com.svg ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"3bc9fa20be6ab5a0b953.svg\";\n\n//# sourceURL=webpack://mytodolist/./src/svgs/dashboard-svgrepo-com.svg?");
 
 /***/ }),
 
