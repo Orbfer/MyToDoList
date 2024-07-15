@@ -78,13 +78,16 @@ function addNewTask() {
   tasksArr.push(taskObject);
   const popUp = document.querySelector(".popup-background");
   popUp.remove();
+  createTask(taskObject);
+}
+function createTask(taskObject) {
   const tasks = document.querySelector("#tasks");
   const task = document.createElement("div");
   task.classList.add("task", "animate__animated", "animate__zoomInDown");
   tasks.append(task);
   const taskDescription = document.createElement("div");
   taskDescription.setAttribute("id", "task-description");
-  taskDescription.innerText = taskName;
+  taskDescription.innerText = taskObject.name;
   task.append(taskDescription);
   const checkboxCont = document.createElement("div");
   checkboxCont.id = "checkbox-cont";
@@ -96,11 +99,11 @@ function addNewTask() {
   checkboxCont.append(checkbox);
   const taskCategory = document.createElement("div");
   taskCategory.id = "task-category";
-  taskCategory.innerText = category;
+  taskCategory.innerText = taskObject.category;
   task.append(taskCategory);
   const taskDueDate = document.createElement("div");
   taskDueDate.id = "task-due-date";
-  taskDueDate.innerText = taskDate;
+  taskDueDate.innerText = taskObject.date;
   task.append(taskDueDate);
   const taskPriority = document.createElement("div");
   taskPriority.id = "task-priority";
@@ -131,12 +134,12 @@ function addNewTask() {
       "animationend",
       () => {
         task.remove();
+        tasksArr = tasksArr.filter((t) => t !== taskObject);
       },
       { once: true }
     );
   }
 }
-
 function highlightEmptyFields() {
   const taskNameInput = document.querySelector(".task-name");
   const taskDateInput = document.querySelector("#task-date");
@@ -219,4 +222,4 @@ function createPriorityBar() {
   }
 }
 export default addTask;
-export { tasksArr };
+export { createTask, tasksArr };
